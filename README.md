@@ -60,3 +60,11 @@ Shopping_Cart/
   shop_cart_Connection/db_con.java
 5.Run the project on the Tomcat server.
 
+---
+ScreenShots :
+![Home-Page](https://github.com/user-attachments/assets/7762cec5-0084-450b-8a42-9e5eed7e4182)
+![Cart-Page](https://github.com/user-attachments/assets/5c5a20fa-55f9-40f8-9502-e30216c08968)
+![Orders History Page](https://github.com/user-attachments/assets/f345a5c0-0a91-4034-94ee-185508bc98b1)
+![Login Page](https://github.com/user-attachments/assets/bc4bb576-e96e-4ca4-a554-aa53b9986d7c)
+
+Thank You!
