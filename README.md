@@ -6,20 +6,20 @@ A simple shopping cart web application built using Java (JSP/Servlet), MySQL, an
 
 Shopping_Cart/
 ├── src/
-│ └── main/
-│ ├── java/
-│ │ ├── shop_cart_Connection/
-│ │ ├── shop_cart_dao/
-│ │ ├── shop_cart_model/
-│ │ └── shop_cart_servlet/
-│ └── webapp/
-│ ├── includes/
-│ ├── META-INF/
-│ ├── WEB-INF/
-│ ├── index.jsp
-│ ├── login.jsp
-│ ├── cart.jsp
-│ └── orders.jsp
+│   └── main/
+│       ├── java/
+│       │   ├── shop_cart_Connection/   → Handles DB connection
+│       │   ├── shop_cart_dao/          → Contains DAO classes
+│       │   ├── shop_cart_model/        → JavaBeans (POJOs) for Product, User, Cart
+│       │   └── shop_cart_servlet/      → All servlets (AddToCart, Login, etc.)
+│       └── webapp/
+│           ├── includes/               → Header, footer includes
+│           ├── META-INF/
+│           ├── WEB-INF/                → Contains web.xml
+│           ├── index.jsp               → Homepage
+│           ├── login.jsp               → Login Page
+│           ├── cart.jsp                → Cart View
+│           └── orders.jsp              → Order History
 
 ---
 
