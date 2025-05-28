@@ -10,10 +10,18 @@ public class db_con {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         if (connection == null || connection.isClosed()) {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // ✅ Updated driver name
-            connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/e_shopping_cart", "root", "Pratham@10");
-            System.out.println("connected");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Fetch credentials from Railway environment variables
+            String host = System.getenv("MYSQLHOST");
+            String database = System.getenv("MYSQLDATABASE");
+            String user = System.getenv("MYSQLUSER");
+            String password = System.getenv("MYSQLPASSWORD");
+
+            String url = "jdbc:mysql://" + host + ":3306/" + database + "?useSSL=false&serverTimezone=UTC";
+
+            connection = DriverManager.getConnection(url, user, password);
+            System.out.println("✅ Connected to Railway MySQL");
         }
         return connection;
     }
