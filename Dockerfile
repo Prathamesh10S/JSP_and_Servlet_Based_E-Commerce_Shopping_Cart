@@ -1,14 +1,11 @@
-# Use Tomcat 10 base image with JDK 17
-FROM tomcat:10.1-jdk17
+# Use Tomcat 9 base image
+FROM tomcat:9.0
 
 # Remove default webapps
-RUN rm -rf /usr/local/tomcat/webapps/*
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Copy WAR file to Tomcat webapps folder
+# Copy your WAR file
 COPY target/Shopping_Cart-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Expose port 8081
-EXPOSE 8081
-
-# Start Tomcat
-CMD ["catalina.sh", "run"]
+# Expose Tomcat port
+EXPOSE 8080
