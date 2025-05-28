@@ -10,9 +10,9 @@ public class db_con {
 		if (connection == null) {
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				String url = "jdbc:mysql://localhost:3306/e_shopping_cart";
+				String url = "jdbc:mysql://tramway.proxy.rlwy.net:17831/railway";
 				String user = "root";
-				String pass = "Pratham@10";
+				String pass = "zOazkzJAQXWEpPBleqxgFzrlhRDbhYDE";
 				connection = DriverManager.getConnection(url, user, pass);
 			} catch (Exception e) {
 				e.printStackTrace();
