@@ -11,14 +11,17 @@ public class db_con {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                // Use environment variables (Render) for credentials
-                String host = System.getenv("DB_HOST"); // gateway01.ap-southeast-1.prod.aws.tidbcloud.com
+                // Environment variables (Render) for credentials
+                String host = System.getenv("DB_HOST"); // e.g., gateway01.ap-southeast-1.prod.aws.tidbcloud.com
                 String port = System.getenv("DB_PORT"); // 4000
                 String db = System.getenv("DB_NAME");   // e_shopping_cart
                 String user = System.getenv("DB_USER"); // 4M254KzevyVSPsk.root
                 String pass = System.getenv("DB_PASS"); // Your TiDB password
 
-                String url = "jdbc:mysql://" + host + ":" + port + "/" + db + "?useSSL=true&requireSSL=true";
+                // Corrected JDBC URL without invalid parameters
+                String url = "jdbc:mysql://" + host + ":" + port + "/" + db +
+                	    "?useSSL=true&requireSSL=true&verifyServerCertificate=true&trustCertificateKeyStoreUrl=file:certificate/ca.pem";
+
 
                 connection = DriverManager.getConnection(url, user, pass);
             } catch (Exception e) {
